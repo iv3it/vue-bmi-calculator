@@ -63,7 +63,7 @@ export default {
         return "Normal weight"
       } else if (x >= 25 && x <= 29.9) {
         return "Overweight"
-      } else if (x > 30) {
+      } else if (x >= 30) {
         return "Obese"
       }
     });
