@@ -5,8 +5,8 @@
     </div>
 
     <section class="bmi">
-      <h2 class="bmi__text">{{ bmiValue }} <span class="bmi__text bmi__text--xs">BMI</span></h2>
-      <h3 class="bmi__text bmi__text--sm">{{ bmiValueDescription }}</h3>
+      <h2 class="bmi__text textOverflow"><span class="textOverflow__span" id="bmiValue">{{ bmiValue }}</span> <span class="bmi__text bmi__text--xs">BMI</span></h2>
+      <h3 class="bmi__text bmi__text--sm textOverflow"><span class="textOverflow__span" id="bmiValueDescription">{{ bmiValueDescription }}</span></h3>
     </section>
 
     <form class="form container my-4 p-0">
@@ -41,6 +41,8 @@
 
 <script>
 import { reactive, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core';
+import gsap from "gsap";
 
 export default {
   name: 'HomePage',
@@ -66,6 +68,23 @@ export default {
       } else if (x >= 30) {
         return "Obese"
       }
+    });
+
+    watch(form, () => {
+      gsap.fromTo("#bmiValue", { 
+        transform: "translateY(100%)"
+      }, {
+        duration: 0.6,
+        transform: "translateY(0)"
+      });
+
+      gsap.fromTo("#bmiValueDescription", { 
+        transform: "translateY(100%)"
+      }, {
+        duration: 0.6,
+        delay: 0.5,
+        transform: "translateY(0)"
+      });
     });
 
     return {
@@ -210,6 +229,15 @@ export default {
       border: none;
       cursor: pointer;      
     }
+  }
+}
+
+.textOverflow {
+  position: relative;
+  overflow: hidden;
+
+  &__span {
+    display: inline-block;
   }
 }
 
