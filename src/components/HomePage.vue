@@ -14,7 +14,7 @@
         <div class="col-sm-6 col-12">
           <div class="form__box">
             <label for="weight" class="form__label">Weight</label>
-            <p class="form__text form__text--blue mb-3">{{ form.weight }}<span class="form__text--blue form__text--xs ms-1">kg</span></p>
+            <p class="form__text form__text--orange mb-3">{{ form.weight }}<span class="form__text--orange form__text--xs ms-1">kg</span></p>
             <input class="form__range" id="weight" type="range" min="30" max="200" step="0.5" v-model="form.weight" required>
             <div class="w-100 d-flex justify-content-between">
               <p class="form__text--black form__text--xs">30</p>
@@ -25,7 +25,7 @@
         <div class="col-sm-6 col-12 mt-sm-0 mt-3">
           <div class="form__box">
             <label for="height" class="form__label">Height</label>
-            <p class="form__text form__text--blue mb-3">{{ form.height }}<span class="form__text--blue form__text--xs ms-1">cm</span></p>
+            <p class="form__text form__text--orange mb-3">{{ form.height }}<span class="form__text--orange form__text--xs ms-1">cm</span></p>
             <input class="form__range" id="height" type="range" min="70" max="230" step="1" v-model="form.height" required>
             <div class="w-100 d-flex justify-content-between">
               <p class="form__text--black form__text--xs">70</p>
@@ -101,7 +101,8 @@ export default {
   position: relative;
   margin: 2rem 0;
   padding: 2rem;
-  background-color: $blue;
+  background-color: $white;
+  box-shadow: 0px 0px 5px 0px #d2d2d2;
   border-radius: 10px;
   overflow: hidden;
 
@@ -110,7 +111,7 @@ export default {
     font-size: 5rem;
     font-weight: 700;
     text-align: center;
-    color: $white;
+    color: $orange;
     margin-bottom: 0;
 
     @media (max-width: 575px) {
@@ -135,8 +136,8 @@ export default {
       }
     }
 
-    &--blue {
-      color: $blue;
+    &--orange {
+      color: $orange;
     }
   }
 }
@@ -170,8 +171,8 @@ export default {
       font-size: 0.9rem;
     }
 
-    &--blue {
-      color: $blue;
+    &--orange {
+      color: $orange;
     }
 
     &--black {
@@ -211,22 +212,22 @@ export default {
     &::-moz-range-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%; 
-      background: $blue;
-      border: none;
+      background: $white;
+      border: 4px solid $orange;
       cursor: pointer;      
     }
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%; 
-      background: $blue;
-      border: none;
+      background: $white;
+      border: 4px solid $orange;
       cursor: pointer;      
     }
   }
