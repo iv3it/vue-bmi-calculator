@@ -16,7 +16,7 @@
             <label for="weight" class="form__label">Weight</label>
             <p class="form__text form__text--orange mb-3">{{ form.weight }}<span class="form__text--orange form__text--xs ms-1">kg</span></p>
             <input class="form__range" id="weight" type="range" min="30" max="200" step="0.5" v-model="form.weight" required>
-            <div class="w-100 d-flex justify-content-between">
+            <div class="w-100 mt-2 d-flex justify-content-between">
               <p class="form__text--black form__text--xs">30</p>
               <p class="form__text--black form__text--xs">200</p>
             </div>
@@ -27,7 +27,7 @@
             <label for="height" class="form__label">Height</label>
             <p class="form__text form__text--orange mb-3">{{ form.height }}<span class="form__text--orange form__text--xs ms-1">cm</span></p>
             <input class="form__range" id="height" type="range" min="70" max="230" step="1" v-model="form.height" required>
-            <div class="w-100 d-flex justify-content-between">
+            <div class="w-100 mt-2 d-flex justify-content-between">
               <p class="form__text--black form__text--xs">70</p>
               <p class="form__text--black form__text--xs">230</p>
             </div>
@@ -203,6 +203,8 @@ export default {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+
+    background: linear-gradient(85deg, rgba(255,226,93,1) 0%, rgba(255,146,93,1) 35%, rgba(255,133,93,1) 100%);
     
 
     &:hover {
