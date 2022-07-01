@@ -4,7 +4,7 @@
       <h1>BMI calculator</h1>
     </div>
 
-    <section class="bmi">
+    <section class="bmi" :class="{'blue': bmiValue < 18.5, 'green': bmiValue >= 18.5 && bmiValue <= 24.9, 'orange': bmiValue >= 25 && bmiValue <= 29.9, 'red': bmiValue > 30}">
       <h2 class="bmi__text textOverflow"><span class="textOverflow__span" id="bmiValue">{{ bmiValue }}</span> <span class="bmi__text bmi__text--xs">BMI</span></h2>
       <h3 class="bmi__text bmi__text--sm textOverflow"><span class="textOverflow__span" id="bmiValueDescription">{{ bmiValueDescription }}</span></h3>
     </section>
@@ -105,6 +105,23 @@ export default {
   box-shadow: 0px 0px 5px 0px #d2d2d2;
   border-radius: 10px;
   overflow: hidden;
+  transition: background-color 0.4s ease-in-out;
+
+  &.red {
+    background-color: $red;
+  }
+
+  &.orange {
+    background-color: $orange;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+
+  &.blue {
+    background-color: $blue;
+  }
 
   &__text {
     position: relative;
